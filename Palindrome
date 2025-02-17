@@ -42,9 +42,10 @@ class Main {
         String s="abcba";
         boolean pal=true;
         int n=s.length();
-        for(int i=0;i<s.length()/2;i++){
+        for(int i=0;i<n/2;i++){
             if(s.charAt(i)!=s.charAt(n-i-1)){
                 pal=false;
+                break;
             }
         }
         if(pal==true){
