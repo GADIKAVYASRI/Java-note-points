@@ -1,0 +1,57 @@
+Brute force approach:
+class Main {
+    public static void main(String[] args) {
+        String s="abba";
+        String ans="";
+        for(int i=s.length()-1;i>=0;i--){
+            ans+=s.charAt(i);
+        }
+        if(s.equals(ans)){
+            System.out.println("Yes! "+ans+" is a palindrome");
+        }
+        else{
+            System.out.println("No! "+ans+" is not a palindrome");
+        }
+    }
+}
+
+More Efficient code:
+class Main {
+    public static void main(String[] args) {
+        String s="abcba";
+        boolean pal=true;
+        int n=s.length()-1;
+        for(int i=0;i<s.length()/2;i++){
+            if(s.charAt(i)!=s.charAt(n)){
+                pal=false;
+            }
+            n--;
+        }
+        if(pal==true){
+            System.out.print("Palindrome");
+        }
+        else{
+            System.out.println("Not a Palindrome");
+        }
+    }
+}
+
+Same code with some changes:
+class Main {
+    public static void main(String[] args) {
+        String s="abcba";
+        boolean pal=true;
+        int n=s.length();
+        for(int i=0;i<s.length()/2;i++){
+            if(s.charAt(i)!=s.charAt(n-i-1)){
+                pal=false;
+            }
+        }
+        if(pal==true){
+            System.out.print("Palindrome");
+        }
+        else{
+            System.out.println("Not a Palindrome");
+        }
+    }
+}
